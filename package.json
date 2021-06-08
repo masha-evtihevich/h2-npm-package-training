@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/masha-evtihevich/h2-npm-package-training/issues"
   },
-  "homepage": "https://github.com/masha-evtihevich/h2-npm-package-training#readme"
+  "homepage": "https://github.com/masha-evtihevich/h2-npm-package-training#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
