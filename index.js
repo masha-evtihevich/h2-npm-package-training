@@ -37,28 +37,25 @@ const data2 = [
 ];
 
 // Task 1
-const indexUser = lodash.findIndex(data1, function (user) { return user.age === 23 })
+// Найти и сохранить в переменную индекс пользователя в массиве data1, у которого возраст равен 23 года
+const indexUser = lodash.findIndex(data1, function (user) { 
+    return user.age === 23 
+})
 
 // Task 2
+// Объединить два массива data1 и data2 в один и записать этот результат в новую переменную
 const joinData = lodash.concat(data1, data2);
 
 // Task 3
-// Solution 1
+// Создать новый объект, но выкинув из него поле “age”
 const newObjOmit = user => lodash.omit(user, ['age']);
 const objOmit = newObjOmit(data1[2])
 
-// Solution 2
-const newObjPick = user => lodash.pick(user, ['name', 'email'])
-const objPick = newObjPick(data2[2])
 
 // Task 4
-const createNewObj = data => {
-    let newObj = {}
-    for (let key in data) {
-        if (key !== 'age') {
-            newObj[key] = data[key]
-        }
-    }
+// Выполнить задачу 3 без библиотек, только средствами javascript (иммутабельно, не используя delete)
+const omit = object => {
+    const {age, ...newObj} = object;
     return newObj
 }
-const objPick = createNewObj(data1[1])
+const newUser = omit(object)
